@@ -39,14 +39,14 @@ function Hero() {
                         initial="hidden"
                         animate="visible"
                         variants={containerVariants}
-                        className="flex justify-center lg:p-8"
+                        className="flex justify-center p-4 sm:p-6 lg:p-8"
                     >
                         <motion.img
                             src={MyProfilePic}
                             width={450}
                             height={450}
                             alt="Profile Pic"
-                            className="border border-stone-900 rounded-3xl bg-transparent" // Added bg-transparent
+                            className="h-auto w-full max-w-[260px] sm:max-w-xs md:max-w-sm lg:max-w-[450px] border border-stone-900 rounded-3xl bg-transparent"
                             initial={{ x: 100, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{ duration: 1, delay: 1 }}
@@ -56,21 +56,21 @@ function Hero() {
                 </div>
                 <div className="w-full lg:w-1/2">
                     <motion.div
-                        className="flex flex-col items-center lg:items-start mt-10"
+                        className="flex flex-col items-center lg:items-start mt-6 sm:mt-10 text-center lg:text-left"
                         variants={childVariants}
                         initial="hidden"
                         animate="visible"
                     >
-                        <motion.span className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-3xl tracking-tight text-transparent">
+                        <motion.span className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-2xl sm:text-3xl tracking-tight text-transparent">
                             Full Stack Developer
                         </motion.span>
-                        <motion.p>
-                            I am a Java Full-Stack Developer with expertise in React.js, Spring Boot, and MySQL/PostgreSQL. Currently pursuing an MCA at St. Aloysius Institute of Management & Information Technology, I focus on building scalable and efficient web applications. With 1 year of experience, I bring a strong understanding of both backend and frontend development, and I am passionate about creating innovative solutions in the tech industry.
+                        <motion.p className="mt-4 text-sm sm:text-base leading-relaxed">
+                            I am a Full-Stack Developer with experience across both ends of the stack. At EG, I currently focus on frontend engineering — building enterprise web applications with React, TypeScript, and Redux Toolkit (RTK Query), helping migrate a large monorepo from Preact to React toward a Micro Frontend architecture, and contributing to product features such as real-time alarms and automated report generation. Previously at VIS Networks, I worked on the backend with Java, Spring Boot, and Spring Security — designing REST APIs and authentication alongside React-based interfaces. I care about writing clean, scalable code and delivering reliable user experiences.
                         </motion.p>
                         <motion.a
-                            href="/resume.pdf"
+                            href="/Sachin_Resume.pdf"
                             target="_blank"
-                            download="Sachin Resume"
+                            download="Sachin_Resume.pdf"
                             rel="noopener noreferrer"
                             className="mt-7 rounded-full p-4 text-sm bg-stone-800 mb-10"
                         >
