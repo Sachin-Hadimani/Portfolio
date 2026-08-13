@@ -41,16 +41,20 @@ function Hero() {
                         variants={containerVariants}
                         className="flex justify-center p-4 sm:p-6 lg:p-8"
                     >
-                        <motion.img
-                            src={MyProfilePic}
-                            width={450}
-                            height={450}
-                            alt="Profile Pic"
-                            className="h-auto w-full max-w-[260px] sm:max-w-xs md:max-w-sm lg:max-w-[450px] border border-stone-900 rounded-3xl bg-transparent"
-                            initial={{ x: 100, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 1, delay: 1 }}
-                        />
+                        <div className="relative">
+                            <div className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-stone-500/20 via-stone-700/10 to-transparent blur-2xl" />
+                            <motion.img
+                                src={MyProfilePic}
+                                width={450}
+                                height={450}
+                                alt="Profile Pic"
+                                className="relative h-auto w-full max-w-[260px] sm:max-w-xs md:max-w-sm lg:max-w-[450px] rounded-[2rem] border border-stone-700/70 shadow-[0_25px_65px_rgba(0,0,0,0.55)] saturate-[0.9] contrast-[0.95] brightness-[0.94]"
+                                initial={{ x: 100, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 1, delay: 1 }}
+                            />
+                            <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-t from-black/35 via-transparent to-stone-950/10" />
+                        </div>
 
                     </motion.div>
                 </div>

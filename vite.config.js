@@ -4,7 +4,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.VITE_BASE_PATH || '/',
+  // Custom domain deploy should always serve from root.
+  base: '/',
   plugins: [
     react(),
     VitePWA({
