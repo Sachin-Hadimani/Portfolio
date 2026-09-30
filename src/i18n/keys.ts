@@ -1,9 +1,13 @@
 export const I18N_KEYS = {
+  common: {
+    languageSwitcherLabel: "common.languageSwitcherLabel",
+  },
   nav: {
     home: "nav.home",
     linkedin: "nav.linkedin",
     github: "nav.github",
-    instagram: "nav.instagram",
+    whatsapp: "nav.whatsapp",
+    whatsappMessage: "nav.whatsappMessage",
   },
   hero: {
     title: "hero.title",
