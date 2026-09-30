@@ -1,7 +1,11 @@
 import { CONTACT } from "../constants";
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { I18N_KEYS } from '../i18n/keys';
 
 function Contact() {
+    const { t } = useTranslation();
+
     return (
         <div className="border-t-2 border-stone-900 pb-20">
             <motion.h2
@@ -10,7 +14,7 @@ function Contact() {
                 transition={{ duration: 0.5 }}
                 className="my-10 text-center text-3xl sm:text-4xl"
             >
-                Get In Touch
+                {t(I18N_KEYS.contact.heading)}
             </motion.h2>
             <div className="text-center tracking-tighter px-4">
                 <motion.p
