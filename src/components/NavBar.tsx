@@ -1,16 +1,20 @@
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"
 import { useTranslation } from 'react-i18next'
 
 import logo from '../assets/MyLogo.svg'
+import { CONTACT } from '../constants'
 import { I18N_KEYS } from '../i18n/keys'
 
 const LANGUAGES = [
     { code: "en", label: "EN" },
-    { code: "ja", label: "JA" },
+    { code: "ja", label: "日本語" },
 ];
 
 function NavBar() {
     const { t, i18n } = useTranslation();
+    const whatsappHref = `https://wa.me/${CONTACT.phoneNo.replace(/\D/g, "")}?text=${encodeURIComponent(t(I18N_KEYS.nav.whatsappMessage))}`;
+    // resolvedLanguage maps detected codes like "en-US" to "en"
+    const currentLanguage = i18n.resolvedLanguage;
 
     return (
         <nav className="flex flex-wrap items-center justify-between gap-4 py-4 sm:py-6">
@@ -32,21 +36,26 @@ function NavBar() {
                     aria-label={t(I18N_KEYS.nav.github)}>
                     <FaGithub />
                 </a>
-                <a href="https://www.instagram.com/sachin___hadimani/"
+                <a href={whatsappHref}
                     target='_blank'
                     rel='noopener noreferrer'
-                    aria-label={t(I18N_KEYS.nav.instagram)}>
-                    <FaInstagram />
+                    aria-label={t(I18N_KEYS.nav.whatsapp)}>
+                    <FaWhatsapp />
                 </a>
-                <div className="flex items-center gap-1 rounded-full bg-stone-900 p-1 text-xs sm:text-sm">
+                <div
+                    role="group"
+                    aria-label={t(I18N_KEYS.common.languageSwitcherLabel)}
+                    className="flex items-center gap-1 rounded-full bg-stone-900 p-1 text-xs sm:text-sm"
+                >
                     {LANGUAGES.map(({ code, label }) => (
                         <button
                             key={code}
                             type="button"
+                            lang={code}
                             onClick={() => i18n.changeLanguage(code)}
-                            aria-pressed={i18n.language === code}
+                            aria-pressed={currentLanguage === code}
                             className={`rounded-full px-3 py-1 transition-colors ${
-                                i18n.language === code
+                                currentLanguage === code
                                     ? "bg-stone-700 text-stone-100"
                                     : "text-stone-400 hover:text-stone-200"
                             }`}
