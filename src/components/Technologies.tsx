@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { I18N_KEYS } from '../i18n/keys';
 import { FaJava } from "react-icons/fa";
 import { RiReactjsLine } from "react-icons/ri";
 import {
@@ -30,15 +32,16 @@ const TECHNOLOGIES = [
 ];
 
 function Technologies() {
+    const { t } = useTranslation();
     const iconsVariants = {
         initial: { y: -10 },
-        animate: (duration) => ({
+        animate: (duration: number) => ({
             y: [10, -10],
             transition: {
                 duration: duration,
-                ease: "linear",
+                ease: "linear" as const,
                 repeat: Infinity,
-                repeatType: "reverse",
+                repeatType: "reverse" as const,
             },
         }),
     };
@@ -51,7 +54,7 @@ function Technologies() {
                 transition={{ duration: 1.5 }}
                 className="my-10 text-center text-3xl sm:text-4xl"
             >
-                Technologies
+                {t(I18N_KEYS.technologies.heading)}
             </motion.h2>
             <motion.div
                 whileInView={{ opacity: 1, x: 0 }}
