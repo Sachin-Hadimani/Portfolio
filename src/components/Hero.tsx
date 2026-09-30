@@ -1,5 +1,7 @@
 import MyProfilePic from '../assets/MyProfilePic.jpg';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { I18N_KEYS } from '../i18n/keys';
 
 const containerVariants = {
     hidden: {
@@ -31,6 +33,8 @@ const childVariants = {
 };
 
 function Hero() {
+    const { t } = useTranslation();
+
     return (
         <div className="pb-4 lg:mb-36">
             <div className="flex flex-wrap lg:flex-row-reverse">
@@ -66,19 +70,19 @@ function Hero() {
                         animate="visible"
                     >
                         <motion.span className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-2xl sm:text-3xl tracking-tight text-transparent">
-                            Full Stack Developer
+                            {t(I18N_KEYS.hero.title)}
                         </motion.span>
                         <motion.p className="mt-4 text-sm sm:text-base leading-relaxed">
-                            I am a Full-Stack Developer with experience across both ends of the stack. At EG, I currently focus on frontend engineering — building enterprise web applications with React, TypeScript, and Redux Toolkit (RTK Query), helping migrate a large monorepo from Preact to React toward a Micro Frontend architecture, and contributing to product features such as real-time alarms and automated report generation. Previously at VIS Networks, I worked on the backend with Java, Spring Boot, and Spring Security — designing REST APIs and authentication alongside React-based interfaces. I care about writing clean, scalable code and delivering reliable user experiences.
+                            {t(I18N_KEYS.hero.bio)}
                         </motion.p>
                         <motion.a
-                            href="/Sachin_Resume.pdf"
+                            href={t(I18N_KEYS.hero.resumeFile)}
                             target="_blank"
-                            download="Sachin_Resume.pdf"
+                            download={t(I18N_KEYS.hero.resumeFileName)}
                             rel="noopener noreferrer"
                             className="mt-7 rounded-full p-4 text-sm bg-stone-800 mb-10"
                         >
-                            Download Resume
+                            {t(I18N_KEYS.hero.downloadResume)}
                         </motion.a>
                     </motion.div>
                 </div>

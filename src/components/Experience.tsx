@@ -1,24 +1,26 @@
 import { EXPERIENCES } from "../constants";
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { I18N_KEYS } from '../i18n/keys';
 
-const MONTHS = {
+const MONTHS: Record<string, number> = {
     jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
     jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11,
 };
 
-const parseStartDate = (year) => {
+const parseStartDate = (year: string) => {
     const [start] = String(year).split("-");
     const [monthRaw, yearRaw] = start.trim().split(/\s+/);
-    const month = MONTHS[monthRaw?.toLowerCase().slice(0, 3)] ?? 0;
+    const month = MONTHS[monthRaw?.toLowerCase().slice(0, 3) ?? ""] ?? 0;
     return new Date(Number.parseInt(yearRaw, 10) || 0, month).getTime();
 };
 
-const parseEndDate = (year) => {
+const parseEndDate = (year: string) => {
     const parts = String(year).split("-");
     const end = (parts[1] ?? parts[0]).trim();
     if (/present/i.test(end)) return Infinity;
     const [monthRaw, yearRaw] = end.split(/\s+/);
-    const month = MONTHS[monthRaw?.toLowerCase().slice(0, 3)] ?? 0;
+    const month = MONTHS[monthRaw?.toLowerCase().slice(0, 3) ?? ""] ?? 0;
     return new Date(Number.parseInt(yearRaw, 10) || 0, month).getTime();
 };
 
@@ -28,6 +30,8 @@ const sortedExperiences = [...EXPERIENCES].sort(
 );
 
 function Experience() {
+    const { t } = useTranslation();
+
     return (
         <div className="pb-4">
             <motion.h2
@@ -35,7 +39,7 @@ function Experience() {
                 initial={{ opacity: 0, y: -100 }}
                 transition={{ duration: 0.5 }}
                 className="my-20 text-center text-3xl sm:text-4xl">
-                Experience
+                {t(I18N_KEYS.experience.heading)}
             </motion.h2>
             <div>
                 {sortedExperiences.map((Experience, index) => (
@@ -55,10 +59,10 @@ function Experience() {
                             className="w-full max-w-full lg:w-3/4"
                         >
                             <h3 className="font-semibold mb-2 text-lg sm:text-xl">
-                                {Experience.role} -{" "}
+                                {t(I18N_KEYS.experience.role(Experience.id))} -{" "}
                                 <span className="text-stone-500">{Experience.company}</span>
                             </h3>
-                            <p className="text-stone-400 text-sm sm:text-base">{Experience.description}</p>
+                            <p className="text-stone-400 text-sm sm:text-base">{t(I18N_KEYS.experience.description(Experience.id))}</p>
                             <div className="mt-4 flex flex-wrap gap-2">
                                 {Experience.technologies.map((tech, index) => (
                                     <span
