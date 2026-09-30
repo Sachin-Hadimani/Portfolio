@@ -1,0 +1,59 @@
+{
+  "common": {
+    "languageName": "日本語",
+    "languageSwitcherLabel": "言語を切り替える"
+  },
+  "nav": {
+    "home": "ホーム",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram"
+  },
+  "hero": {
+    "title": "フルスタックエンジニア",
+    "bio": "私はフルスタックエンジニアとして、フロントエンドとバックエンドの両方で開発経験を積んできました。現在はEGにてフロントエンド開発を中心に担当し、React・TypeScript・Redux Toolkit(RTK Query)を用いたエンタープライズ向けWebアプリケーションの構築、PreactからReactへの大規模モノレポ移行およびマイクロフロントエンド化の支援、リアルタイムアラーム機能や自動レポート生成機能などの新機能開発に携わっています。以前はVIS Networksにて、Java・Spring Boot・Spring Securityを用いたバックエンド開発を担当し、REST APIや認証機能の設計に加え、React製のユーザーインターフェース開発も行いました。クリーンでスケーラブルなコードを書き、信頼性の高いユーザー体験を提供することを大切にしています。",
+    "downloadResume": "履歴書をダウンロード",
+    "resumeFile": "/Sachin_Hadimani_Japanese_Resume.pdf",
+    "resumeFileName": "Sachin_Hadimani_Japanese_Resume.pdf"
+  },
+  "technologies": {
+    "heading": "技術スタック"
+  },
+  "experience": {
+    "heading": "経歴",
+    "items": {
+      "eg": {
+        "role": "ジュニアソフトウェアデベロッパー",
+        "description": "大規模モノレポのマイクロフロントエンド(MFE)アーキテクチャへの移行と、PreactからReactへのアップグレードに従事。効率的なデータ取得と状態管理のためにRedux Toolkit(RTK Query)などのモダンな技術を導入し、アプリケーション間でUIを標準化するための共有コンポーネントライブラリを独自に構築。リアルタイムアラームモジュールや自動レポート生成システムなど、新しいプロダクト機能もリリース。"
+      },
+      "visNetworks": {
+        "role": "ジュニアアプリケーションエンジニア",
+        "description": "Java、Spring Boot、Spring Securityを用いたバックエンドサービスの構築とReactベースのユーザーインターフェース開発の両方を担当。MySQLと連携するREST APIの設計・実装、認証・認可機能の実装を行い、レスポンシブで高パフォーマンスなフロントエンド体験を提供。"
+      }
+    }
+  },
+  "projects": {
+    "heading": "プロジェクト",
+    "items": {
+      "ems": {
+        "title": "EMS – エネルギー管理システム",
+        "description": "EGでのインターンシップ中に実践的な学習プロジェクトとして開発。リアルタイムの消費データを可視化し、ロールベースのアクセス制御、ダッシュボードやアラーム機能を備えたWebベースのエネルギー管理システム。トレンド分析のためにリアルタイムおよび過去のエネルギーデータを可視化するインタラクティブなチャートやグラフを構築。React、TypeScript、Redux Toolkit(RTK Query)といった実務で使われる技術のキャッチアップにつながった。"
+      },
+      "bliss": {
+        "title": "Bliss Expertise – エアコン販売・サービス管理",
+        "description": "エアコンの販売・サービス業向けに開発したMERNスタックのWebアプリケーション。顧客はサービスの詳細(有効期限、料金、予約履歴を含む)を確認し、オンラインでサービスを予約できる。顧客用と管理者用の別モジュールを構築し、サービス・予約・売上管理のロールベースアクセスを実現。"
+      },
+      "productManagement": {
+        "title": "製品管理アプリ",
+        "description": "作成・参照・更新・削除(CRUD)を完全にサポートするフルスタックの製品管理アプリケーション。リレーショナルデータベースと連携したSpring Boot製REST APIを構築し、フォームバリデーションとインライン編集機能を備えたReact製UIで製品カタログを管理。"
+      },
+      "portfolioWebsite": {
+        "title": "ポートフォリオサイト",
+        "description": "まさに今ご覧いただいているこのサイト。ReactとViteで構築した完全レスポンシブな個人ポートフォリオ。スタイリングにTailwind CSS、スクロール連動アニメーションとスムーズな画面遷移にFramer Motion、技術スタックの表示にreact-iconsを使用。日付でソートされた経歴タイムライン、EMS・Bliss Expertise・製品管理アプリのプロジェクトギャラリー、ダウンロード可能な履歴書、クリックで発信・送信できる電話番号とメールリンクを備える。モバイルファーストな可変レイアウト、アクセシブルなalt属性、きれいなリンクプレビューのためのSEO/Open Graphメタタグを設計。"
+      }
+    }
+  },
+  "contact": {
+    "heading": "お問い合わせ"
+  }
+}
